@@ -573,3 +573,124 @@ letter-spacing:.08em;
   }
 
 }
+
+/* =========================
+   MOBILE SECTION LAYOUT FIX
+   Makes heading + controls + cards clean on phones
+========================= */
+@media (max-width: 768px){
+
+  /* section spacing */
+  .section{
+    padding: 1.4rem .85rem 2rem;
+  }
+
+  /* heading block stacks nicely */
+  .section-head{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: .7rem;
+    margin-bottom: .9rem;
+  }
+
+  .section-head > div:first-child{
+    width: 100%;
+  }
+
+  .section-kicker{
+    font-size: .68rem;
+    letter-spacing: .28em;
+    margin-bottom: .35rem;
+  }
+
+  .section-title{
+    font-size: 1.05rem;
+    line-height: 1.05;
+    letter-spacing: .08em;
+    margin: 0 0 .35rem;
+  }
+
+  .section-sub{
+    font-size: .86rem;
+    line-height: 1.45;
+    max-width: 100%;
+    margin: 0;
+    color: rgba(244,241,232,.78);
+  }
+
+  /* controls go under heading, compact */
+  .section-actions{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: .45rem;
+    margin-top: .1rem;
+  }
+
+  .section-actions .icon-btn{
+    width: 38px;
+    height: 38px;
+    font-size: 1.05rem;
+  }
+
+  /* carousel shell tighter */
+  .carousel{
+    padding: .7rem;
+    border-radius: 18px;
+  }
+
+  .carousel-track{
+    gap: .8rem;
+  }
+
+  /* cards fit mobile width better */
+  .product-card{
+    width: min(255px, 74vw);
+    border-radius: 16px;
+  }
+
+  .product-img{
+    height: 185px;
+    padding: 12px;
+  }
+
+  .product-body{
+    padding: .85rem;
+  }
+
+  .product-body h3{
+    font-size: .92rem;
+    line-height: 1.15;
+    letter-spacing: .06em;
+    margin-bottom: .35rem;
+  }
+
+  .product-body .muted{
+    font-size: .84rem;
+    line-height: 1.4;
+  }
+
+  .product-meta{
+    gap: .35rem;
+    margin: .55rem 0 .75rem;
+  }
+
+  .chip{
+    font-size: .75rem;
+    padding: .28rem .5rem;
+  }
+
+  .btn-small{
+    padding: .55rem .8rem;
+    font-size: .86rem;
+  }
+
+  .tag{
+    top: 10px;
+    left: 10px;
+    font-size: .74rem;
+    padding: .28rem .5rem;
+  }
+}
