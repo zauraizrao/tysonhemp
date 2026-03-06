@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tyson Hemp — COAs</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#050807;
+      --bg2:#07110c;
+      --text:#f4f1e8;
+      --muted:#b9c3b7;
+      --primary:#2f7a4b;
+      --gold:#b9a46a;
+      --stroke:rgba(244,241,232,.12);
+      --glass:rgba(120,160,130,.14);
+      --radius:22px;
+      --shadow:0 18px 60px rgba(0,0,0,.55);
+      --max:1120px;
+      --font-head:"Bodoni Moda", serif;
+      --font-main:"Noto Sans JP", system-ui, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:var(--font-main);
+      color:var(--text);
+      background:
+        radial-gradient(900px 550px at 18% 10%, rgba(47,122,75,.24), transparent 60%),
+        radial-gradient(820px 540px at 78% 0%, rgba(185,164,106,.14), transparent 62%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      overflow-x:hidden;
+      padding-top:74px;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+
+    .bg-visuals{position:fixed; inset:0; pointer-events:none; z-index:-1}
+    .orb{position:absolute; filter:blur(38px); opacity:.6; border-radius:999px}
+    .orb-a{width:520px;height:520px;left:-170px;top:-170px;background:rgba(47,122,75,.30)}
+    .orb-b{width:420px;height:420px;right:-160px;top:60px;background:rgba(185,164,106,.16)}
+    .orb-c{width:560px;height:560px;left:40%;bottom:-280px;background:rgba(126,215,164,.10)}
+
+    .nav-wrap{
+      position:fixed;
+      top:0; left:0; right:0;
+      z-index:999;
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      background:rgba(5,8,7,.72);
+      border-bottom:1px solid rgba(244,241,232,.10);
+    }
+
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:.85rem 1rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+
+    .brand{display:flex;align-items:center;gap:.75rem}
+    .brand-mark{
+      width:44px;height:44px;border-radius:14px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(47,122,75,.95), rgba(185,164,106,.65));
+      font-weight:800;
+    }
+    .brand-text{display:flex;flex-direction:column;line-height:1.05}
+    .brand-name{
+      font-family:var(--font-head);
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:1rem;
+    }
+    .brand-sub{
+      color:rgba(244,241,232,.72);
+      font-size:.84rem;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:.8rem;
+    }
+
+    .nav-links a{
+      padding:.55rem .7rem;
+      border-radius:999px;
+      color:rgba(244,241,232,.86);
+    }
+
+    .nav-links a:hover{background:rgba(244,241,232,.07)}
+
+    .btn-nav{
+      background:linear-gradient(135deg, rgba(47,122,75,.95), rgba(185,164,106,.70));
+      border:1px solid rgba(244,241,232,.14);
+      font-weight:700;
+    }
+
+    .nav-toggle{
+      display:none;
+      width:46px;height:46px;
+      border-radius:14px;
+      border:1px solid rgba(244,241,232,.14);
+      background:rgba(244,241,232,.06);
+      cursor:pointer;
+    }
+    .nav-toggle span{
+      display:block;
+      width:22px;height:2px;
+      margin:5px auto;
+      background:rgba(244,241,232,.9);
+      border-radius:2px;
+    }
+
+    .mobile-menu{
+      display:none;
+      position:fixed;
+      top:74px; left:12px; right:12px;
+      z-index:998;
+      border-radius:18px;
+      padding:.8rem;
+      background:rgba(5,8,7,.88);
+      border:1px solid rgba(244,241,232,.12);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      box-shadow:var(--shadow);
+      flex-direction:column;
+      gap:.3rem;
+    }
+
+    .mobile-menu a{
+      padding:.9rem 1rem;
+      border-radius:12px;
+    }
+    .mobile-menu a:hover{background:rgba(244,241,232,.06)}
+    .mobile-menu.is-open{display:flex}
+
+    .page{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:2rem 1rem 4rem;
+    }
+
+    .hero-head{
+      text-align:center;
+      padding:1.5rem 0 1rem;
+    }
+
+    .eyebrow{
+      margin:0 0 .5rem;
+      font-size:.8rem;
+      letter-spacing:.34em;
+      text-transform:uppercase;
+      color:rgba(244,241,232,.72);
+    }
+
+    .page-title{
+      margin:0;
+      font-family:var(--font-head);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:clamp(2rem, 5vw, 3.4rem);
+      line-height:.95;
+    }
+
+    .page-sub{
+      max-width:700px;
+      margin:.8rem auto 0;
+      color:rgba(244,241,232,.72);
+      font-size:1rem;
+    }
+
+    .glass{
+      background:linear-gradient(180deg, rgba(120,160,130,.16), rgba(10,18,14,.42));
+      border:1px solid var(--stroke);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+    }
+
+    .coa-shell{
+      padding:1rem;
+    }
+
+    .main-tabs,
+    .sub-tabs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.7rem;
+    }
+
+    .main-tabs{margin-bottom:1rem}
+    .sub-tabs{margin:0 0 1rem}
+
+    .tab-btn,
+    .subtab-btn{
+      border:1px solid rgba(244,241,232,.14);
+      background:rgba(244,241,232,.06);
+      color:var(--text);
+      border-radius:999px;
+      padding:.85rem 1.15rem;
+      cursor:pointer;
+      font:inherit;
+      transition:.2s ease;
+    }
+
+    .tab-btn:hover,
+    .subtab-btn:hover{
+      background:rgba(244,241,232,.10);
+    }
+
+    .tab-btn.active,
+    .subtab-btn.active{
+      background:linear-gradient(135deg, rgba(47,122,75,.95), rgba(185,164,106,.70));
+      color:var(--text);
+      font-weight:700;
+    }
+
+    .tab-panel{display:none}
+    .tab-panel.active{display:block}
+
+    .subtab-panel{display:none}
+    .subtab-panel.active{display:block}
+
+    .panel-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:1rem;
+      margin-bottom:1rem;
+    }
+
+    .panel-title{
+      margin:0 0 .25rem;
+      font-family:var(--font-head);
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      font-size:clamp(1.25rem, 3vw, 2rem);
+    }
+
+    .panel-copy{
+      margin:0;
+      color:rgba(244,241,232,.72);
+    }
+
+    .carousel-actions{
+      display:flex;
+      gap:.55rem;
+      flex-shrink:0;
+    }
+
+    .icon-btn{
+      width:44px;height:44px;
+      border-radius:999px;
+      border:1px solid rgba(244,241,232,.18);
+      background:rgba(244,241,232,.06);
+      color:rgba(244,241,232,.95);
+      font-size:1.35rem;
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+    }
+
+    .icon-btn:hover{background:rgba(244,241,232,.10)}
+
+    .carousel{
+      overflow:hidden;
+      padding:1rem;
+      border-radius:var(--radius);
+    }
+
+    .carousel-track{
+      display:flex;
+      gap:1rem;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      scroll-behavior:smooth;
+      padding-bottom:.35rem;
+      -webkit-overflow-scrolling:touch;
+    }
+
+    .carousel-track::-webkit-scrollbar{height:10px}
+    .carousel-track::-webkit-scrollbar-thumb{
+      background:rgba(244,241,232,.16);
+      border-radius:999px;
+    }
+    .carousel-track::-webkit-scrollbar-track{
+      background:rgba(244,241,232,.06);
+      border-radius:999px;
+    }
+
+    .report-card{
+      flex:0 0 auto;
+      width:min(300px, 82vw);
+      scroll-snap-align:start;
+      border-radius:20px;
+      overflow:hidden;
+      background:rgba(0,0,0,.22);
+      border:1px solid rgba(244,241,232,.12);
+    }
+
+    .report-img{
+      position:relative;
+      height:260px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:16px;
+      background:rgba(0,0,0,.14);
+    }
+
+    .report-img img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      filter:drop-shadow(0 16px 28px rgba(0,0,0,.35));
+    }
+
+    .report-tag{
+      position:absolute;
+      top:14px; left:14px;
+      padding:.35rem .6rem;
+      border-radius:999px;
+      border:1px solid rgba(244,241,232,.14);
+      background:rgba(5,8,7,.45);
+      font-size:.82rem;
+    }
+
+    .report-body{padding:1rem}
+    .report-body h3{
+      margin:.05rem 0 .35rem;
+      font-family:var(--font-head);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:1rem;
+    }
+
+    .muted{color:var(--muted)}
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.45rem;
+      margin:.7rem 0 1rem;
+    }
+
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      padding:.35rem .6rem;
+      border-radius:999px;
+      border:1px solid rgba(244,241,232,.14);
+      background:rgba(5,8,7,.35);
+      color:rgba(244,241,232,.88);
+      font-size:.84rem;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:.78rem 1rem;
+      border-radius:999px;
+      border:1px solid rgba(244,241,232,.16);
+      background:linear-gradient(135deg, rgba(47,122,75,.95), rgba(185,164,106,.70));
+      color:var(--text);
+      font-weight:700;
+    }
+
+    .btn:hover{filter:brightness(1.04)}
+
+    @media (max-width: 900px){
+      body{padding-top:72px}
+      .nav-links{display:none}
+      .nav-toggle{display:block}
+      .panel-head{align-items:flex-start; flex-direction:column}
+    }
+
+    @media (max-width: 520px){
+      .page{padding:1.2rem .8rem 3rem}
+      .coa-shell{padding:.8rem}
+      .report-img{height:230px}
+      .main-tabs,.sub-tabs{gap:.5rem}
+      .tab-btn,.subtab-btn{padding:.75rem .95rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-visuals" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+  </div>
+
+  <header class="nav-wrap">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">TY</span>
+        <span class="brand-text">
+          <span class="brand-name">Tyson Hemp</span>
+          <span class="brand-sub">Premium THC-A</span>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html#flower">Flower</a>
+        <a href="index.html#gummies">Gummies</a>
+        <a href="index.html#vapes">Vapes</a>
+        <a href="index.html#prerolls">Pre-Rolls</a>
+        <a href="coas.html" class="btn-nav">COAs</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#flower">Flower</a>
+      <a href="index.html#gummies">Gummies</a>
+      <a href="index.html#vapes">Vapes</a>
+      <a href="index.html#prerolls">Pre-Rolls</a>
+      <a href="coas.html">COAs</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero-head">
+      <p class="eyebrow">Certificates of Analysis</p>
+      <h1 class="page-title">Lab Reports</h1>
+      <p class="page-sub">Switch categories and strain types, then replace the demo report images with your real COA previews.</p>
+    </section>
+
+    <section class="coa-shell glass">
+      <div class="main-tabs" id="mainTabs">
+        <button class="tab-btn active" data-tab="flowers">Flowers</button>
+        <button class="tab-btn" data-tab="gummies">Gummies</button>
+        <button class="tab-btn" data-tab="prerolls">Pre-Rolls</button>
+      </div>
+
+      <!-- FLOWERS -->
+      <div class="tab-panel active" data-panel="flowers">
+        <div class="sub-tabs">
+          <button class="subtab-btn active" data-parent="flowers" data-subtab="hybrid">Hybrid</button>
+          <button class="subtab-btn" data-parent="flowers" data-subtab="indica">Indica</button>
+          <button class="subtab-btn" data-parent="flowers" data-subtab="sativa">Sativa</button>
+        </div>
+
+        <div class="subtab-panel active" data-parent-panel="flowers" data-subpanel="hybrid">
+          <div class="panel-head">
+            <div>
+              <h2 class="panel-title">Flowers — Hybrid Reports</h2>
+              <p class="panel-copy">Demo lab report previews for hybrid flower batches.</p>
+            </div>
+            <div class="carousel-actions">
+              <button class="icon-btn" data-prev="flowers-hybrid">‹</button>
+              <button class="icon-btn" data-next="flowers-hybrid">›</button>
+            </div>
+          </div>
+
+          <div class="carousel glass" id="flowers-hybrid">
+            <div class="carousel-track">
+              <!-- 6 cards -->
+              <article class="report-card">
+                <div class="report-img">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232f7a4b'/%3E%3Cstop offset='1' stop-color='%23050807'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' rx='30' fill='url(%23g)'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3ECOA PREVIEW%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EHybrid Batch 01%3C/text%3E%3C/svg%3E" alt="COA preview">
+                  <span class="report-tag">Flower</span>
+                </div>
+                <div class="report-body">
+                  <h3>Hybrid Batch 01</h3>
+                  <p class="muted">Lab report preview image</p>
+                  <div class="chips">
+                    <span class="chip">Hybrid</span><span class="chip">Batch A1</span><span class="chip">PDF Ready</span>
+                  </div>
+                  <a href="#" class="btn">View Report</a>
+                </div>
+              </article>
+
+              <article class="report-card">
+                <div class="report-img">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23b9a46a'/%3E%3Cstop offset='1' stop-color='%23050807'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' rx='30' fill='url(%23g)'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3ECOA PREVIEW%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EHybrid Batch 02%3C/text%3E%3C/svg%3E" alt="COA preview">
+                  <span class="report-tag">Flower</span>
+                </div>
+                <div class="report-body">
+                  <h3>Hybrid Batch 02</h3>
+                  <p class="muted">Lab report preview image</p>
+                  <div class="chips">
+                    <span class="chip">Hybrid</span><span class="chip">Batch A2</span><span class="chip">PDF Ready</span>
+                  </div>
+                  <a href="#" class="btn">View Report</a>
+                </div>
+              </article>
+
+              <article class="report-card">
+                <div class="report-img">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23486d55'/%3E%3Cstop offset='1' stop-color='%23050807'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' rx='30' fill='url(%23g)'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3ECOA PREVIEW%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EHybrid Batch 03%3C/text%3E%3C/svg%3E" alt="COA preview">
+                  <span class="report-tag">Flower</span>
+                </div>
+                <div class="report-body">
+                  <h3>Hybrid Batch 03</h3>
+                  <p class="muted">Lab report preview image</p>
+                  <div class="chips">
+                    <span class="chip">Hybrid</span><span class="chip">Batch A3</span><span class="chip">PDF Ready</span>
+                  </div>
+                  <a href="#" class="btn">View Report</a>
+                </div>
+              </article>
+
+              <article class="report-card">
+                <div class="report-img">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232f7a4b'/%3E%3Cstop offset='1' stop-color='%23101812'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' rx='30' fill='url(%23g)'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3ECOA PREVIEW%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EHybrid Batch 04%3C/text%3E%3C/svg%3E" alt="COA preview">
+                  <span class="report-tag">Flower</span>
+                </div>
+                <div class="report-body">
+                  <h3>Hybrid Batch 04</h3>
+                  <p class="muted">Lab report preview image</p>
+                  <div class="chips">
+                    <span class="chip">Hybrid</span><span class="chip">Batch A4</span><span class="chip">PDF Ready</span>
+                  </div>
+                  <a href="#" class="btn">View Report</a>
+                </div>
+              </article>
+
+              <article class="report-card">
+                <div class="report-img">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23b9a46a'/%3E%3Cstop offset='1' stop-color='%23101812'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' rx='30' fill='url(%23g)'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3ECOA PREVIEW%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EHybrid Batch 05%3C/text%3E%3C/svg%3E" alt="COA preview">
+                  <span class="report-tag">Flower</span>
+                </div>
+                <div class="report-body">
+                  <h3>Hybrid Batch 05</h3>
+                  <p class="muted">Lab report preview image</p>
+                  <div class="chips">
+                    <span class="chip">Hybrid</span><span class="chip">Batch A5</span><span class="chip">PDF Ready</span>
+                  </div>
+                  <a href="#" class="btn">View Report</a>
+                </div>
+              </article>
+
+              <article class="report-card">
+                <div class="report-img">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23486d55'/%3E%3Cstop offset='1' stop-color='%23101812'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' rx='30' fill='url(%23g)'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3ECOA PREVIEW%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EHybrid Batch 06%3C/text%3E%3C/svg%3E" alt="COA preview">
+                  <span class="report-tag">Flower</span>
+                </div>
+                <div class="report-body">
+                  <h3>Hybrid Batch 06</h3>
+                  <p class="muted">Lab report preview image</p>
+                  <div class="chips">
+                    <span class="chip">Hybrid</span><span class="chip">Batch A6</span><span class="chip">PDF Ready</span>
+                  </div>
+                  <a href="#" class="btn">View Report</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="subtab-panel" data-parent-panel="flowers" data-subpanel="indica">
+          <div class="panel-head">
+            <div>
+              <h2 class="panel-title">Flowers — Indica Reports</h2>
+              <p class="panel-copy">Demo lab report previews for indica flower batches.</p>
+            </div>
+            <div class="carousel-actions">
+              <button class="icon-btn" data-prev="flowers-indica">‹</button>
+              <button class="icon-btn" data-next="flowers-indica">›</button>
+            </div>
+          </div>
+
+          <div class="carousel glass" id="flowers-indica">
+            <div class="carousel-track">
+              <!-- 6 -->
+              <script type="text/template" id="tpl-ignore-1"></script>
+              <article class="report-card"><div class="report-img"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Crect width='100%25' height='100%25' rx='30' fill='%231b3324'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3EINDICA COA%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EBatch I1%3C/text%3E%3C/svg%3E"><span class="report-tag">Flower</span></div><div class="report-body"><h3>Indica Batch 01</h3><p class="muted">Lab report preview image</p><div class="chips"><span class="chip">Indica</span><span class="chip">Batch I1</span><span class="chip">PDF Ready</span></div><a href="#" class="btn">View Report</a></div></article>
+              <article class="report-card"><div class="report-img"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Crect width='100%25' height='100%25' rx='30' fill='%2336472d'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3EINDICA COA%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EBatch I2%3C/text%3E%3C/svg%3E"><span class="report-tag">Flower</span></div><div class="report-body"><h3>Indica Batch 02</h3><p class="muted">Lab report preview image</p><div class="chips"><span class="chip">Indica</span><span class="chip">Batch I2</span><span class="chip">PDF Ready</span></div><a href="#" class="btn">View Report</a></div></article>
+              <article class="report-card"><div class="report-img"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Crect width='100%25' height='100%25' rx='30' fill='%2355633f'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3EINDICA COA%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EBatch I3%3C/text%3E%3C/svg%3E"><span class="report-tag">Flower</span></div><div class="report-body"><h3>Indica Batch 03</h3><p class="muted">Lab report preview image</p><div class="chips"><span class="chip">Indica</span><span class="chip">Batch I3</span><span class="chip">PDF Ready</span></div><a href="#" class="btn">View Report</a></div></article>
+              <article class="report-card"><div class="report-img"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Crect width='100%25' height='100%25' rx='30' fill='%231b3324'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3EINDICA COA%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EBatch I4%3C/text%3E%3C/svg%3E"><span class="report-tag">Flower</span></div><div class="report-body"><h3>Indica Batch 04</h3><p class="muted">Lab report preview image</p><div class="chips"><span class="chip">Indica</span><span class="chip">Batch I4</span><span class="chip">PDF Ready</span></div><a href="#" class="btn">View Report</a></div></article>
+              <article class="report-card"><div class="report-img"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Crect width='100%25' height='100%25' rx='30' fill='%2336472d'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3EINDICA COA%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EBatch I5%3C/text%3E%3C/svg%3E"><span class="report-tag">Flower</span></div><div class="report-body"><h3>Indica Batch 05</h3><p class="muted">Lab report preview image</p><div class="chips"><span class="chip">Indica</span><span class="chip">Batch I5</span><span class="chip">PDF Ready</span></div><a href="#" class="btn">View Report</a></div></article>
+              <article class="report-card"><div class="report-img"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Crect width='100%25' height='100%25' rx='30' fill='%2355633f'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3EINDICA COA%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EBatch I6%3C/text%3E%3C/svg%3E"><span class="report-tag">Flower</span></div><div class="report-body"><h3>Indica Batch 06</h3><p class="muted">Lab report preview image</p><div class="chips"><span class="chip">Indica</span><span class="chip">Batch I6</span><span class="chip">PDF Ready</span></div><a href="#" class="btn">View Report</a></div></article>
+            </div>
+          </div>
+        </div>
+
+        <div class="subtab-panel" data-parent-panel="flowers" data-subpanel="sativa">
+          <div class="panel-head">
+            <div>
+              <h2 class="panel-title">Flowers — Sativa Reports</h2>
+              <p class="panel-copy">Demo lab report previews for sativa flower batches.</p>
+            </div>
+            <div class="carousel-actions">
+              <button class="icon-btn" data-prev="flowers-sativa">‹</button>
+              <button class="icon-btn" data-next="flowers-sativa">›</button>
+            </div>
+          </div>
+
+          <div class="carousel glass" id="flowers-sativa">
+            <div class="carousel-track">
+              <article class="report-card"><div class="report-img"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Crect width='100%25' height='100%25' rx='30' fill='%2372783a'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3ESATIVA COA%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EBatch S1%3C/text%3E%3C/svg%3E"><span class="report-tag">Flower</span></div><div class="report-body"><h3>Sativa Batch 01</h3><p class="muted">Lab report preview image</p><div class="chips"><span class="chip">Sativa</span><span class="chip">Batch S1</span><span class="chip">PDF Ready</span></div><a href="#" class="btn">View Report</a></div></article>
+              <article class="report-card"><div class="report-img"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Crect width='100%25' height='100%25' rx='30' fill='%23808d49'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3ESATIVA COA%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EBatch S2%3C/text%3E%3C/svg%3E"><span class="report-tag">Flower</span></div><div class="report-body"><h3>Sativa Batch 02</h3><p class="muted">Lab report preview image</p><div class="chips"><span class="chip">Sativa</span><span class="chip">Batch S2</span><span class="chip">PDF Ready</span></div><a href="#" class="btn">View Report</a></div></article>
+              <article class="report-card"><div class="report-img"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Crect width='100%25' height='100%25' rx='30' fill='%23929c56'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3ESATIVA COA%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EBatch S3%3C/text%3E%3C/svg%3E"><span class="report-tag">Flower</span></div><div class="report-body"><h3>Sativa Batch 03</h3><p class="muted">Lab report preview image</p><div class="chips"><span class="chip">Sativa</span><span class="chip">Batch S3</span><span class="chip">PDF Ready</span></div><a href="#" class="btn">View Report</a></div></article>
+              <article class="report-card"><div class="report-img"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Crect width='100%25' height='100%25' rx='30' fill='%2372783a'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3ESATIVA COA%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EBatch S4%3C/text%3E%3C/svg%3E"><span class="report-tag">Flower</span></div><div class="report-body"><h3>Sativa Batch 04</h3><p class="muted">Lab report preview image</p><div class="chips"><span class="chip">Sativa</span><span class="chip">Batch S4</span><span class="chip">PDF Ready</span></div><a href="#" class="btn">View Report</a></div></article>
+              <article class="report-card"><div class="report-img"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Crect width='100%25' height='100%25' rx='30' fill='%23808d49'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3ESATIVA COA%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EBatch S5%3C/text%3E%3C/svg%3E"><span class="report-tag">Flower</span></div><div class="report-body"><h3>Sativa Batch 05</h3><p class="muted">Lab report preview image</p><div class="chips"><span class="chip">Sativa</span><span class="chip">Batch S5</span><span class="chip">PDF Ready</span></div><a href="#" class="btn">View Report</a></div></article>
+              <article class="report-card"><div class="report-img"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Crect width='100%25' height='100%25' rx='30' fill='%23929c56'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='72' font-family='Arial' text-anchor='middle'%3ESATIVA COA%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EBatch S6%3C/text%3E%3C/svg%3E"><span class="report-tag">Flower</span></div><div class="report-body"><h3>Sativa Batch 06</h3><p class="muted">Lab report preview image</p><div class="chips"><span class="chip">Sativa</span><span class="chip">Batch S6</span><span class="chip">PDF Ready</span></div><a href="#" class="btn">View Report</a></div></article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GUMMIES -->
+      <div class="tab-panel" data-panel="gummies">
+        <div class="sub-tabs">
+          <button class="subtab-btn active" data-parent="gummies" data-subtab="hybrid">Hybrid</button>
+          <button class="subtab-btn" data-parent="gummies" data-subtab="indica">Indica</button>
+          <button class="subtab-btn" data-parent="gummies" data-subtab="sativa">Sativa</button>
+        </div>
+
+        <div class="subtab-panel active" data-parent-panel="gummies" data-subpanel="hybrid">
+          <div class="panel-head">
+            <div>
+              <h2 class="panel-title">Gummies — Hybrid Reports</h2>
+              <p class="panel-copy">Demo gummy report previews for hybrid lineups.</p>
+            </div>
+            <div class="carousel-actions">
+              <button class="icon-btn" data-prev="gummies-hybrid">‹</button>
+              <button class="icon-btn" data-next="gummies-hybrid">›</button>
+            </div>
+          </div>
+
+          <div class="carousel glass" id="gummies-hybrid">
+            <div class="carousel-track">
+              <article class="report-card"><div class="report-img"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200'%3E%3Crect width='100%25' height='100%25' rx='30' fill='%235a4230'/%3E%3Crect x='60' y='70' width='780' height='1060' rx='22' fill='none' stroke='rgba(255,255,255,.28)' stroke-width='6'/%3E%3Ctext x='450' y='210' fill='white' font-size='68' font-family='Arial' text-anchor='middle'%3EGUMMY COA%3C/text%3E%3Ctext x='450' y='330' fill='white' font-size='44' font-family='Arial' text-anchor='middle'%3EHybrid G1%3C/text%3E%3C/svg%3E"><span class="report-tag">Gummies</span></div><div class="report-body"><h3>Hybrid Gummy 01</h3><p class="muted">Lab report preview image</p><div class="chips"><span class="chip">Hybrid</span><span class="chip">G1</span><span class="chip">PDF Ready</span></div><a href="#" class="btn">View Report</a></div
