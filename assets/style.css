@@ -471,3 +471,105 @@ width:100%;
 font-weight:600;
 letter-spacing:.08em;
 }
+
+/* =========================
+   MOBILE HERO FIX
+   Prevent ugly stretching on phones
+========================= */
+
+@media (max-width: 768px) {
+  .hero{
+    height: calc(100vh - 74px);
+    min-height: 540px;
+  }
+
+  .hero-slider,
+  .hero-slide,
+  .hero-media{
+    height: 100%;
+  }
+
+  .hero-img{
+    object-fit: contain !important;   /* show full image */
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+    background: #050807;              /* fills empty sides/top nicely */
+  }
+
+  .hero-controls{
+    bottom: 18px;
+    padding: .35rem .5rem;
+    transform: translateX(-50%) scale(.95);
+  }
+}
+@media (max-width: 768px) {
+  .hero{
+    height: calc(100vh - 74px);
+    min-height: 540px;
+    background:
+      radial-gradient(ellipse at center, rgba(47,122,75,.18), transparent 55%),
+      linear-gradient(180deg, #050807, #07110c);
+  }
+
+  .hero-slider,
+  .hero-slide,
+  .hero-media{
+    height: 100%;
+  }
+
+  .hero-img{
+    object-fit: contain !important;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+  }
+
+  .hero-controls{
+    bottom: 18px;
+    padding: .35rem .5rem;
+    transform: translateX(-50%) scale(.95);
+  }
+}
+/* =========================
+   MOBILE HERO FIX (NO EMPTY SPACE)
+========================= */
+
+@media (max-width: 768px){
+
+  .hero{
+    height: 55vh;            /* smaller hero so empty space disappears */
+    min-height: 360px;
+  }
+
+  .hero-slider,
+  .hero-slide,
+  .hero-media{
+    height:100%;
+  }
+
+  .hero-img{
+    width:100%;
+    height:100%;
+    object-fit:contain;      /* keeps image proportions */
+    transform:scale(1.25);   /* fills the space better */
+    object-position:center;
+    background:#050807;
+  }
+
+  .hero-controls{
+    bottom:12px;
+    transform:translateX(-50%) scale(.9);
+  }
+
+}
+/* Fix only this specific product image on mobile */
+@media (max-width:768px){
+
+  #flower-1 .product-img img{
+    transform: scale(1.5);
+    object-fit: contain;
+  }
+
+}
