@@ -1,287 +1,529 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tyson Hemp</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tyson Hemp</title>
 
-  <!-- WAZABI-LIKE: tall editorial display serif + clean body -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- WAZABI-LIKE: tall editorial display serif + clean body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="./assets/style.css" />
-</head>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
 
-<body>
-  <!-- Clean background (NO lines/patterns) -->
-  <div class="bg-visuals" aria-hidden="true">
-    <div class="orb orb-a"></div>
-    <div class="orb orb-b"></div>
-    <div class="orb orb-c"></div>
-    <div class="noise"></div>
-  </div>
-
-  <!-- NAV -->
-  <header class="nav-wrap">
-    <nav class="nav">
-      <a class="brand" href="index.html">
-        <span class="brand-text">
-          <span class="brand-name">Tyson Hemp</span>
-          <span class="brand-sub">Premium THC-A</span>
-        </span>
-      </a>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
-      <div class="nav-links" id="navLinks">
-        <a href="coas.html">COAs</a>
-        <a href="disclaimer.html">Disclaimer</a>
-        <a href="contact.html" class="btn btn-small">Contact</a>
-      </div>
-    </nav>
-  </header>
-
-  <!-- HERO = IMAGE ONLY (NO TEXT / NO OVERLAY) -->
-  <section class="hero" aria-label="Hero Slider">
-    <div class="hero-slider" id="heroSlider">
-      <article class="hero-slide is-active">
-        <div class="hero-media">
-          <img class="hero-img" src="./assets/images/1.png" alt="Banner 1" />
-        </div>
-      </article>
-
-      <article class="hero-slide">
-        <div class="hero-media">
-          <img class="hero-img" src="./assets/images/2.png" alt="Banner 2" />
-        </div>
-      </article>
-
-      <article class="hero-slide">
-        <div class="hero-media">
-          <img class="hero-img" src="./assets/images/3.png" alt="Banner 3" />
-        </div>
-      </article>
+  <body>
+    <!-- Clean background (NO lines/patterns) -->
+    <div class="bg-visuals" aria-hidden="true">
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+      <div class="orb orb-c"></div>
+      <div class="noise"></div>
     </div>
-  </section>
 
-  <main>
-  <!-- Pre Rolls2 (SEPARATE) -->
-    <section class="section" id="vapes">
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">Our PreRolls Boxes Collection</p>
-          <h2 class="section-title">THC-A PreRolls 40 Count Boxes</h2>
-          <p class="section-sub">Experience the exceptional quality and potency of Tyson THC-A 1.5G Pre-Rolls. crafted Prerolls, each filled with 1.5 grams of premium THC-A rich flower Designed for both recreational and medicinal users these Prerolls provide a potent and smooth smoking experience that is second to none. Whether you’re looking to unwind after a long day or seeking therapeutic benefits, Tyson THC-A Pre-rolls deliver consistent high-quality results every time.
-</p>
-        </div>
+    <!-- NAV -->
+    <header class="nav-wrap">
+      <nav class="nav">
+        <a class="brand" href="index.html">
+          <span class="brand-text">
+            <span class="brand-name">Tyson Hemp</span>
+            <span class="brand-sub">Premium THC-A</span>
+          </span>
+        </a>
 
-        <div class="section-actions">
-          <button class="icon-btn" data-carousel-prev="vapeCarousel" aria-label="Prev">‹</button>
-          <button class="icon-btn" data-carousel-next="vapeCarousel" aria-label="Next">›</button>
-        </div>
-      </div>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
 
-      <div class="carousel glass" id="vapeCarousel" data-carousel>
-        <div class="carousel-track">
-          <!-- 6 -->
-          <article class="product-card"><div class="product-img"><img src="./assets/images/40ct Box Assorted 02.png" alt=""><span class="tag">PreRolls</span></div><div class="product-body"><h3>THC-A PreRolls Assorted</h3><p class="muted">1.5 Gram 40 Count</p><div class="product-meta"></div></div></article>
-          <article class="product-card"><div class="product-img"><img src="./assets/images/40ct Box Indica.png" alt=""><span class="tag">PreRolls</span></div><div class="product-body"><h3>THC-A PreRolls Indica</h3><p class="muted">1.5 Gram 40 Count</p><div class="product-meta"></div></div></article>
-          <article class="product-card"><div class="product-img"><img src="./assets/images/40ct Box Sativa.png" alt=""><span class="tag">PreRolls</span></div><div class="product-body"><h3>THC-A PreRolls Sativa</h3><p class="muted">1.5 Gram 40 Count</p><div class="product-meta"></div></div></article>
-          <article class="product-card"><div class="product-img"><img src="./assets/images/40ct Box.png" alt=""><span class="tag">PreRolls</span></div><div class="product-body"><h3>THC-A PreRolls Hybrid</h3><p class="muted">1.5 Gram 40 Count</p><div class="product-meta"></div></div></article>
+        <div class="nav-links" id="navLinks">
+          <a href="coas.html">COAs</a>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="contact.html" class="btn btn-small">Contact</a>
         </div>
-      </div>
-    </section>
+      </nav>
+    </header>
 
-    <!-- PRE-ROLLS (SEPARATE) -->
-    <section class="section" id="prerolls">
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">COLLECTION</p>
-          <h2 class="section-title">THC-A Pre-Rolls 50 Count</h2>
-          <p class="section-sub">
- </p>
-        </div>
+    <!-- HERO = IMAGE ONLY (NO TEXT / NO OVERLAY) -->
+    <section class="hero" aria-label="Hero Slider">
+      <div class="hero-slider" id="heroSlider">
+        <article class="hero-slide is-active">
+          <div class="hero-media">
+            <img class="hero-img" src="./assets/images/1.png" alt="Banner 1" />
+          </div>
+        </article>
 
-        <div class="section-actions">
-          <button class="icon-btn" data-carousel-prev="prerollCarousel" aria-label="Prev">‹</button>
-          <button class="icon-btn" data-carousel-next="prerollCarousel" aria-label="Next">›</button>
-        </div>
-      </div>
+        <article class="hero-slide">
+          <div class="hero-media">
+            <img class="hero-img" src="./assets/images/2.png" alt="Banner 2" />
+          </div>
+        </article>
 
-      <div class="carousel glass" id="prerollCarousel" data-carousel>
-        <div class="carousel-track">
-          <!-- 6 -->
-          <article class="product-card"><div class="product-img"><img src="./assets/images/50 ct Hybrid Box.png" alt=""><span class="tag">Pre-Roll</span></div><div class="product-body"><h3>THC-A PreRolls Hybrid</h3><p class="muted">2 Gram 50 Count</p><div class="product-meta"></div></div></article>
-          <article class="product-card"><div class="product-img"><img src="./assets/images/50 ct Indica Box.png" alt=""><span class="tag">Pre-Roll</span></div><div class="product-body"><h3>THC-A PreRolls Indica</h3><p class="muted">2 Gram 50 Count</p><div class="product-meta"></div></div></article>
-          <article class="product-card"><div class="product-img"><img src="./assets/images/50 ct Sativa Box.png" alt=""><span class="tag">Pre-Roll</span></div><div class="product-body"><h3>THC-A PreRolls Sativa</h3><p class="muted">2 Gram 50 Count</p><div class="product-meta"></div></div></article>
-          <article class="product-card"><div class="product-img"><img src="./assets/images/50ct All Jar.png" alt=""><span class="tag">Pre-Roll</span></div><div class="product-body"><h3>THC-A PreRolls Jar</h3><p class="muted">1.5 Gram 50 Count</p><div class="product-meta"></div></div></article>
-          <article class="product-card"><div class="product-img"><img src="./assets/images/50CT JAR MOCKUP Hybrid.png" alt=""><span class="tag">Pre-Roll</span></div><div class="product-body"><h3>THC-A PreRolls Jar Hybrid</h3><p class="muted">1.5 Gram 50 Count</p><div class="product-meta"></div></div></article>
-          <article class="product-card"><div class="product-img"><img src="./assets/images/50CT JAR MOCKUP Indica.png" alt=""><span class="tag">Pre-Roll</span></div><div class="product-body"><h3>THC-A PreRolls Jar Indica</h3><p class="muted">1.5 Gram 50 Count</p><div class="product-meta"></div></div></article>
-          <article class="product-card"><div class="product-img"><img src="./assets/images/50CT JAR MOCKUP Sativa.png" alt=""><span class="tag">Pre-Roll</span></div><div class="product-body"><h3>THC-A PreRolls Jar Sativa</h3><p class="muted">1.5 Gram 50 Count</p><div class="product-meta"></div></div></article>
-        </div>
+        <article class="hero-slide">
+          <div class="hero-media">
+            <img class="hero-img" src="./assets/images/3.png" alt="Banner 3" />
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- FLOWER -->
-    <section class="section" id="flower">
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">COLLECTION</p>
-          <h2 class="section-title">THC-A Flower</h2>
-          <p class="section-sub">Elevate your cannabis journey with Tyson Pure THC-A Exotic Flower, available in a generous 7-gram . This premium product is designed for cannabis connoisseurs who seek top-tier quality, potent effects, and rich flavors. Meticulously cultivated, Tyson delivers an unparalleled cannabis experience with its Pure THC-A Flower.
-</p>
-        </div>
+    <main>
+      <!-- PRE-ROLLS (SEPARATE) -->
+      <section class="section" id="prerolls">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">COLLECTION</p>
+            <h2 class="section-title">THC-A Pre-Rolls 50 Count</h2>
+            <p class="section-sub">
+              Experience the exceptional quality and potency of Tyson THC-A 1.5G
+              Pre-Rolls. crafted Prerolls, each filled with 1.5 grams of premium
+              THC-A rich flower Designed for both recreational and medicinal
+              users these Prerolls provide a potent and smooth smoking
+              experience that is second to none. Whether you’re looking to
+              unwind after a long day or seeking therapeutic benefits, Tyson
+              THC-A Pre-rolls deliver consistent high-quality results every
+              time.
+            </p>
+          </div>
 
-        <div class="section-actions">
-          <button class="icon-btn" data-carousel-prev="flowerCarousel" aria-label="Prev">‹</button>
-          <button class="icon-btn" data-carousel-next="flowerCarousel" aria-label="Next">›</button>
-        </div>
-      </div>
-
-      <div class="carousel glass" id="flowerCarousel" data-carousel>
-        <div class="carousel-track">
-
-          <!-- 6 ITEMS -->
-          <article class="product-card" id="flower-1">
-            <div class="product-img">
-              <img src="./assets/images/Tyson Flower Jar All.png" alt="Flower placeholder">
-              <span class="tag">Flower</span>
-            </div>
-            <div class="product-body">
-              <h3>THC-A Flower All Jar</h3>
-              <p class="muted">30 Count 1 Gram</p>
-              <div class="product-meta">
-               
-              </div>
-              
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-img">
-              <img src="./assets/images/Tyson Flower Jar Assorted.png" alt="Flower placeholder">
-              <span class="tag">Flower</span>
-            </div>
-            <div class="product-body">
-              <h3>THC-A Flower Assorted</h3>
-              <p class="muted"> 30 Count 1 Gram</p>
-              <div class="product-meta">
-                
-              </div>
-              
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-img">
-              <img src="./assets/images/Tyson Flower Jar Hybrid.png" alt="Flower placeholder">
-              <span class="tag">Flower</span>
-            </div>
-            <div class="product-body">
-              <h3>THC-A Flower Hybrid</h3>
-              <p class="muted">30 Count 1 Gram</p>
-              <div class="product-meta">
-               
-              </div>
-              
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-img">
-              <img src="./assets/images/Tyson Flower Jar Indica.png" alt="Flower placeholder">
-              <span class="tag">Flower</span>
-            </div>
-            <div class="product-body">
-              <h3>THC-A Flower Indica</h3>
-              <p class="muted">30 Count 1 Gram</p>
-              <div class="product-meta">
-                
-              </div>
-              
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-img">
-              <img src="./assets/images/Tyson Flower Jar Sativa.png" alt="Flower placeholder">
-              <span class="tag">Flower</span>
-            </div>
-            <div class="product-body">
-              <h3>THC-A Flower Sativa</h3>
-              <p class="muted">30 Count 1 Gram</p>
-              <div class="product-meta">
-               
-              </div>
-              
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- GUMMIES -->
-    <section class="section" id="gummies">
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">Tyson Hemp</p>
-          <h2 class="section-title">THC-A Gummies</h2>
-          <p class="section-sub">Explore Gummies Collection</p>
-        </div>
-
-        <div class="section-actions">
-          <button class="icon-btn" data-carousel-prev="gummyCarousel" aria-label="Prev">‹</button>
-          <button class="icon-btn" data-carousel-next="gummyCarousel" aria-label="Next">›</button>
-        </div>
-      </div>
-
-      <div class="carousel glass" id="gummyCarousel" data-carousel>
-        <div class="carousel-track">
-
-          <!-- 6 ITEMS -->
-          <article class="product-card"><div class="product-img"><img src="./assets/images/Tyson Gummmies All.png" alt=""><span class="tag">Gummies</span></div><div class="product-body"><h3>THC-A Gummies All Jar</h3><p class="muted">1000 MG 20 Count</p><div class="product-meta"></div></div></article>
-          <article class="product-card"><div class="product-img"><img src="./assets/images/Tyson Gummmies Hybrid copy.png" alt=""><span class="tag">Gummies</span></div><div class="product-body"><h3>THC-A Gummies Hybrid</h3><p class="muted">1000 MG 20 Count</p><div class="product-meta"></div></div></article>
-          <article class="product-card"><div class="product-img"><img src="./assets/images/Tyson Gummmies Indica copy.png" alt=""><span class="tag">Gummies</span></div><div class="product-body"><h3>THC-A Gummies Indica</h3><p class="muted">1000 MG 20 Count</p><div class="product-meta"></div></div></article>
-          <article class="product-card"><div class="product-img"><img src="./assets/images/Tyson Gummmies Sativa 1.png" alt=""><span class="tag">Gummies</span></div><div class="product-body"><h3>THC-A Gummies Sativa</h3><p class="muted">1000 MG 20 Count</p><div class="product-meta"></div></div></article>
-        </div>
-      </div>
-    </section>
-
-  
-
-    
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footer-inner">
-        <div>
-          <div class="footer-brand">
-            <span class="brand-mark"><img src="./assets/images/Logo.png" alt=""></span>
-            <div>
-              <div class="footer-title">Tyson Hemp</div>
-              <div class="muted small">THC-A Products • Lab Tested</div>
-            </div>
+          <div class="section-actions">
+            <button
+              class="icon-btn"
+              data-carousel-prev="prerollCarousel"
+              aria-label="Prev"
+            >
+              ‹
+            </button>
+            <button
+              class="icon-btn"
+              data-carousel-next="prerollCarousel"
+              aria-label="Next"
+            >
+              ›
+            </button>
           </div>
         </div>
 
-        <div class="footer-links">
-          <a href="coas.html">COAs</a>
-          <a href="disclaimer.html">Disclaimer</a>
-          <a href="contact.html">Contact</a>
+        <div class="carousel glass" id="prerollCarousel" data-carousel>
+          <div class="carousel-track">
+            <!-- 6 -->
+            <article class="product-card">
+              <div class="product-img">
+                <img src="./assets/images/50 ct Hybrid Box.png" alt="" /><span
+                  class="tag"
+                  >Pre-Roll</span
+                >
+              </div>
+              <div class="product-body">
+                <h3>THC-A PreRolls Hybrid</h3>
+                <p class="muted">2 Gram 50 Count</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-img">
+                <img src="./assets/images/50 ct Indica Box.png" alt="" /><span
+                  class="tag"
+                  >Pre-Roll</span
+                >
+              </div>
+              <div class="product-body">
+                <h3>THC-A PreRolls Indica</h3>
+                <p class="muted">2 Gram 50 Count</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-img">
+                <img src="./assets/images/50 ct Sativa Box.png" alt="" /><span
+                  class="tag"
+                  >Pre-Roll</span
+                >
+              </div>
+              <div class="product-body">
+                <h3>THC-A PreRolls Sativa</h3>
+                <p class="muted">2 Gram 50 Count</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-img">
+                <img src="./assets/images/50ct All Jar.png" alt="" /><span
+                  class="tag"
+                  >Pre-Roll</span
+                >
+              </div>
+              <div class="product-body">
+                <h3>THC-A PreRolls Jar</h3>
+                <p class="muted">1.5 Gram 50 Count</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-img">
+                <img
+                  src="./assets/images/50CT JAR MOCKUP Hybrid.png"
+                  alt=""
+                /><span class="tag">Pre-Roll</span>
+              </div>
+              <div class="product-body">
+                <h3>THC-A PreRolls Jar Hybrid</h3>
+                <p class="muted">1.5 Gram 50 Count</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-img">
+                <img
+                  src="./assets/images/50CT JAR MOCKUP Indica.png"
+                  alt=""
+                /><span class="tag">Pre-Roll</span>
+              </div>
+              <div class="product-body">
+                <h3>THC-A PreRolls Jar Indica</h3>
+                <p class="muted">1.5 Gram 50 Count</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-img">
+                <img
+                  src="./assets/images/50CT JAR MOCKUP Sativa.png"
+                  alt=""
+                /><span class="tag">Pre-Roll</span>
+              </div>
+              <div class="product-body">
+                <h3>THC-A PreRolls Jar Sativa</h3>
+                <p class="muted">1.5 Gram 50 Count</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="footer-bottom">
-        <span class="muted small">© <span id="year"></span> Tyson Hemp</span>
-      </div>
-    </footer>
+      <!-- Pre Rolls2 (SEPARATE) -->
+      <section class="section" id="vapes">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Our PreRolls Boxes Collection</p>
+            <h2 class="section-title">THC-A PreRolls 40 Count Boxes</h2>
+            <p class="section-sub"></p>
+          </div>
 
-  </main>
+          <div class="section-actions">
+            <button
+              class="icon-btn"
+              data-carousel-prev="vapeCarousel"
+              aria-label="Prev"
+            >
+              ‹
+            </button>
+            <button
+              class="icon-btn"
+              data-carousel-next="vapeCarousel"
+              aria-label="Next"
+            >
+              ›
+            </button>
+          </div>
+        </div>
 
-  <script src="./assets/main.js"></script>
-</body>
+        <div class="carousel glass" id="vapeCarousel" data-carousel>
+          <div class="carousel-track">
+            <!-- 6 -->
+            <article class="product-card">
+              <div class="product-img">
+                <img
+                  src="./assets/images/40ct Box Assorted 02.png"
+                  alt=""
+                /><span class="tag">PreRolls</span>
+              </div>
+              <div class="product-body">
+                <h3>THC-A PreRolls Assorted</h3>
+                <p class="muted">1.5 Gram 40 Count</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-img">
+                <img src="./assets/images/40ct Box Indica.png" alt="" /><span
+                  class="tag"
+                  >PreRolls</span
+                >
+              </div>
+              <div class="product-body">
+                <h3>THC-A PreRolls Indica</h3>
+                <p class="muted">1.5 Gram 40 Count</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-img">
+                <img src="./assets/images/40ct Box Sativa.png" alt="" /><span
+                  class="tag"
+                  >PreRolls</span
+                >
+              </div>
+              <div class="product-body">
+                <h3>THC-A PreRolls Sativa</h3>
+                <p class="muted">1.5 Gram 40 Count</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-img">
+                <img src="./assets/images/40ct Box.png" alt="" /><span
+                  class="tag"
+                  >PreRolls</span
+                >
+              </div>
+              <div class="product-body">
+                <h3>THC-A PreRolls Hybrid</h3>
+                <p class="muted">1.5 Gram 40 Count</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FLOWER -->
+      <section class="section" id="flower">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">COLLECTION</p>
+            <h2 class="section-title">THC-A Flower</h2>
+            <p class="section-sub">
+              Elevate your cannabis journey with Tyson Pure THC-A Exotic Flower,
+              available in a generous 7-gram . This premium product is designed
+              for cannabis connoisseurs who seek top-tier quality, potent
+              effects, and rich flavors. Meticulously cultivated, Tyson delivers
+              an unparalleled cannabis experience with its Pure THC-A Flower.
+            </p>
+          </div>
+
+          <div class="section-actions">
+            <button
+              class="icon-btn"
+              data-carousel-prev="flowerCarousel"
+              aria-label="Prev"
+            >
+              ‹
+            </button>
+            <button
+              class="icon-btn"
+              data-carousel-next="flowerCarousel"
+              aria-label="Next"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+
+        <div class="carousel glass" id="flowerCarousel" data-carousel>
+          <div class="carousel-track">
+            <!-- 6 ITEMS -->
+            <article class="product-card" id="flower-1">
+              <div class="product-img">
+                <img
+                  src="./assets/images/Tyson Flower Jar All.png"
+                  alt="Flower placeholder"
+                />
+                <span class="tag">Flower</span>
+              </div>
+              <div class="product-body">
+                <h3>THC-A Flower All Jar</h3>
+                <p class="muted">30 Count 1 Gram</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-img">
+                <img
+                  src="./assets/images/Tyson Flower Jar Assorted.png"
+                  alt="Flower placeholder"
+                />
+                <span class="tag">Flower</span>
+              </div>
+              <div class="product-body">
+                <h3>THC-A Flower Assorted</h3>
+                <p class="muted">30 Count 1 Gram</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-img">
+                <img
+                  src="./assets/images/Tyson Flower Jar Hybrid.png"
+                  alt="Flower placeholder"
+                />
+                <span class="tag">Flower</span>
+              </div>
+              <div class="product-body">
+                <h3>THC-A Flower Hybrid</h3>
+                <p class="muted">30 Count 1 Gram</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-img">
+                <img
+                  src="./assets/images/Tyson Flower Jar Indica.png"
+                  alt="Flower placeholder"
+                />
+                <span class="tag">Flower</span>
+              </div>
+              <div class="product-body">
+                <h3>THC-A Flower Indica</h3>
+                <p class="muted">30 Count 1 Gram</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-img">
+                <img
+                  src="./assets/images/Tyson Flower Jar Sativa.png"
+                  alt="Flower placeholder"
+                />
+                <span class="tag">Flower</span>
+              </div>
+              <div class="product-body">
+                <h3>THC-A Flower Sativa</h3>
+                <p class="muted">30 Count 1 Gram</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- GUMMIES -->
+      <section class="section" id="gummies">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Tyson Hemp</p>
+            <h2 class="section-title">THC-A Gummies</h2>
+            <p class="section-sub">Explore Gummies Collection</p>
+          </div>
+
+          <div class="section-actions">
+            <button
+              class="icon-btn"
+              data-carousel-prev="gummyCarousel"
+              aria-label="Prev"
+            >
+              ‹
+            </button>
+            <button
+              class="icon-btn"
+              data-carousel-next="gummyCarousel"
+              aria-label="Next"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+
+        <div class="carousel glass" id="gummyCarousel" data-carousel>
+          <div class="carousel-track">
+            <!-- 6 ITEMS -->
+            <article class="product-card">
+              <div class="product-img">
+                <img src="./assets/images/Tyson Gummmies All.png" alt="" /><span
+                  class="tag"
+                  >Gummies</span
+                >
+              </div>
+              <div class="product-body">
+                <h3>THC-A Gummies All Jar</h3>
+                <p class="muted">1000 MG 20 Count</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-img">
+                <img
+                  src="./assets/images/Tyson Gummmies Hybrid copy.png"
+                  alt=""
+                /><span class="tag">Gummies</span>
+              </div>
+              <div class="product-body">
+                <h3>THC-A Gummies Hybrid</h3>
+                <p class="muted">1000 MG 20 Count</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-img">
+                <img
+                  src="./assets/images/Tyson Gummmies Indica copy.png"
+                  alt=""
+                /><span class="tag">Gummies</span>
+              </div>
+              <div class="product-body">
+                <h3>THC-A Gummies Indica</h3>
+                <p class="muted">1000 MG 20 Count</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-img">
+                <img
+                  src="./assets/images/Tyson Gummmies Sativa 1.png"
+                  alt=""
+                /><span class="tag">Gummies</span>
+              </div>
+              <div class="product-body">
+                <h3>THC-A Gummies Sativa</h3>
+                <p class="muted">1000 MG 20 Count</p>
+                <div class="product-meta"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <div>
+            <div class="footer-brand">
+              <span class="brand-mark"
+                ><img src="./assets/images/Logo.png" alt=""
+              /></span>
+              <div>
+                <div class="footer-title">Tyson Hemp</div>
+                <div class="muted small">THC-A Products • Lab Tested</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <a href="coas.html">COAs</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span class="muted small">© <span id="year"></span> Tyson Hemp</span>
+        </div>
+      </footer>
+    </main>
+
+    <script src="./assets/main.js"></script>
+  </body>
 </html>
