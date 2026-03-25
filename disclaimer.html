@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disclaimer | Tyson Hemp</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#031019;
+      --bg2:#071b25;
+      --panel:rgba(255,255,255,.08);
+      --panel-strong:rgba(255,255,255,.10);
+      --stroke:rgba(255,255,255,.12);
+      --text:#f4f6f8;
+      --muted:rgba(255,255,255,.76);
+      --green:#4b8c57;
+      --green2:#98a86b;
+      --shadow:0 20px 50px rgba(0,0,0,.35);
+      --max:1380px;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:"Montserrat",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(75,140,87,.24), transparent 26%),
+        radial-gradient(circle at 85% 15%, rgba(152,168,107,.12), transparent 22%),
+        linear-gradient(180deg, #02070b 0%, #04111a 38%, #071b25 100%);
+      min-height:100vh;
+      padding-top:92px;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* NAVBAR */
+    .nav-wrap{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:1000;
+      background:rgba(8,15,22,.82);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 24px;
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      position:relative;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-shrink:0;
+    }
+
+    .brand-mark{
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      font-weight:800;
+      font-size:1.1rem;
+      color:#fff;
+      background:linear-gradient(135deg, var(--green), var(--green2));
+      box-shadow:0 10px 28px rgba(0,0,0,.22);
+    }
+
+    .brand-text{
+      line-height:1.05;
+    }
+
+    .brand-name{
+      display:block;
+      font-family:"Playfair Display",serif;
+      font-size:1.15rem;
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .brand-sub{
+      display:block;
+      margin-top:4px;
+      font-size:.82rem;
+      color:rgba(255,255,255,.74);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      padding:12px 16px;
+      border-radius:999px;
+      font-size:.95rem;
+      color:#fff;
+      transition:.2s ease;
+    }
+
+    .nav-links a:hover{
+      background:rgba(255,255,255,.08);
+    }
+
+    .nav-links a.active-link{
+      background:linear-gradient(135deg, var(--green), var(--green2));
+      font-weight:700;
+    }
+
+    .nav-toggle{
+      display:none;
+      width:42px;
+      height:42px;
+      min-width:42px;
+      min-height:42px;
+      border:none;
+      border-radius:12px;
+      background:rgba(255,255,255,.08);
+      cursor:pointer;
+      padding:0;
+      flex-shrink:0;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .nav-toggle span{
+      display:block;
+      width:20px;
+      height:2px;
+      border-radius:999px;
+      background:#fff;
+      transition:.25s ease;
+    }
+
+    .nav-toggle.active span:nth-child(1){
+      transform:translateY(6px) rotate(45deg);
+    }
+
+    .nav-toggle.active span:nth-child(2){
+      opacity:0;
+    }
+
+    .nav-toggle.active span:nth-child(3){
+      transform:translateY(-6px) rotate(-45deg);
+    }
+
+    /* PAGE */
+    .page{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:36px 24px 60px;
+    }
+
+    .hero{
+      margin-bottom:24px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:14px;
+      padding:10px 16px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      color:rgba(255,255,255,.82);
+      font-size:.82rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .hero h1{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(2rem, 5vw, 4rem);
+      line-height:1.05;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      margin-bottom:12px;
+    }
+
+    .hero p{
+      max-width:760px;
+      color:var(--muted);
+      font-size:1rem;
+      line-height:1.75;
+    }
+
+    .glass-box{
+      position:relative;
+      overflow:hidden;
+      border-radius:30px;
+      padding:30px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.05)),
+        rgba(255,255,255,.03);
+      border:1px solid var(--stroke);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+
+    .glass-box::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at top right, rgba(152,168,107,.12), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(75,140,87,.12), transparent 30%);
+      pointer-events:none;
+    }
+
+    .disclaimer-content{
+      position:relative;
+      z-index:1;
+    }
+
+    .disclaimer-content h2{
+      font-size:clamp(1.3rem, 3vw, 2rem);
+      margin-bottom:16px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-weight:800;
+    }
+
+    .disclaimer-content p{
+      color:var(--muted);
+      font-size:1rem;
+      line-height:1.9;
+      margin-bottom:18px;
+    }
+
+    .disclaimer-content p:last-child{
+      margin-bottom:0;
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px){
+      body{
+        padding-top:82px;
+      }
+
+      .nav{
+        padding:14px 16px;
+      }
+
+      .nav-toggle{
+        display:flex;
+      }
+
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:16px;
+        right:16px;
+        margin-top:12px;
+        padding:14px;
+        border-radius:20px;
+        background:rgba(8,15,22,.98);
+        border:1px solid rgba(255,255,255,.08);
+        box-shadow:0 18px 40px rgba(0,0,0,.35);
+        flex-direction:column;
+        align-items:stretch;
+        gap:8px;
+      }
+
+      .nav-links.show{
+        display:flex;
+      }
+
+      .nav-links a{
+        width:100%;
+        padding:14px 16px;
+        border-radius:14px;
+      }
+
+      .page{
+        padding:24px 16px 44px;
+      }
+
+      .glass-box{
+        padding:22px 18px;
+        border-radius:24px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .brand-mark{
+        width:48px;
+        height:48px;
+        border-radius:16px;
+      }
+
+      .brand-name{
+        font-size:1rem;
+      }
+
+      .brand-sub{
+        font-size:.74rem;
+      }
+
+      .hero h1{
+        margin-bottom:10px;
+      }
+
+      .hero p,
+      .disclaimer-content p{
+        font-size:.95rem;
+        line-height:1.8;
+      }
+
+      .disclaimer-content h2{
+        margin-bottom:12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav-wrap">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">TY</span>
+        <span class="brand-text">
+          <span class="brand-name">Tyson Hemp</span>
+          <span class="brand-sub">Lab Reports</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="navMenu">
+        <a href="coas.html">COAs</a>
+        <a href="disclaimer.html" class="active-link">Disclaimer</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <span class="eyebrow">Important Notice</span>
+      <h1>Disclaimer</h1>
+    </section>
+
+    <section class="glass-box">
+      <div class="disclaimer-content">
+        <h2>Website Disclaimer</h2>
+
+        <p>
+        Legal Disclaimer
+No Medical Claims: These Statements have not been evaluated by the food and drug Administration. This product is not intended to diagnose, treat, cure and prevent any disease. The information on this site is for education purposes only and should not be considered Medical Advice.
+<br>Product Quality Assurance
+Quality Commitment: At tysonhemp, we are committed to providing high-quality lab-tested products. Every batch is screened for purity and potency to ensure consistency and efficacy.
+<br>Acknowledgement of Risk
+Assumption of Risks By Purchasing and using these products, you acknowledge the inherent risks associated with using THC products and agree to assume full responsibility for any effects or legal issues that may arise.
+        </p>
+<h2>THC-P Disclaimer</h2>
+        <p>
+          THCP-Products Disclaimer
+
+Exotics THCP Prerolls: Advanced Potency Meets Exotic Flavor
+Crafted for connoisseurs, the kind who know their terpenes, understand their cannabinoids, and expect more from their pre-roll. Each pouch includes two (2) 1.5g pre-rolls, expertly rolled with diamond-infused flower, premium U.S .- grown hemp, and precision-crafted to deliver ultra-potent effects and rich, exotic flavor from start to finish. These are not your standard prerolls. We start with boutique-quality hemp flower, infuse it with pure THCP diamonds, and preserve its full terpene profile through state-of-the-art methods. The result is a slow-burning, flavorful, heavy-hitting pre- roll that delivers a powerful euphoric lift followed by smooth, body-enveloping effects - all without compromising on taste or quality.
+
+
+What Sets Exotics THC-P Pre-Rolls Apart?
+Federal and State Laws: our Products comply with federal law, containing less than 0.3% Delta 9 THC by dry weight, and are derived from legal hemp. However, the legality of Delta 8 THC, Delta 9 THC, THCP,HHC, and other cannabinoids can vary by state and territory. it is the consumer’s responsibility to know the laws in their area. Restricted States: Currently we cannot ship to states that have restriction on hemp-derived products, including but not limited to Alaska,Arizona,Colorado,Connecticut,Delaware,Idaho, Lowa,Michigan,Montana,Nevada,New york,North Dakota, Oregon,Rhode Island, Utah, Vermont, and Washington. Check local laws for the most current restrictions. Age Verifications: You must be 21 years or older to purchase and use these products . Age verification Required at purchase. No Medical Claims: These Statements have not been evaluated by the food and drug Administration. This product is not intended to diagnose, treat, cure and prevent any disease. The information on this site is for education purposes only and should not be considered Medical Advice. Chillz Hemp is not responsible for misuse of products or failure to comply with local regulations. Use responsibly.
+        </p>
+
+        <p>
+          We are not liable for any loss or damage, including without limitation indirect or consequential loss or damage, arising from the use of this website or reliance on any information displayed here. By continuing to use this website, you acknowledge and agree to this disclaimer and all related terms.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    navToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+      navToggle.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>
