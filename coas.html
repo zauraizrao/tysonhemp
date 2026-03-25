@@ -279,31 +279,216 @@
         height:420px;
       }
     }
+    .nav-wrap{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  background:rgba(10,16,22,.88);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav{
+  max-width:1440px;
+  margin:0 auto;
+  padding:16px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  position:relative;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+  color:#fff;
+}
+
+.brand-mark{
+  width:56px;
+  height:56px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  font-weight:800;
+  font-size:1.1rem;
+  background:linear-gradient(135deg, #4b8c57, #98a86b);
+  color:#fff;
+}
+
+.brand-text{
+  line-height:1.05;
+}
+
+.brand-name{
+  display:block;
+  font-family:"Playfair Display", serif;
+  font-size:1.1rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.brand-sub{
+  display:block;
+  margin-top:4px;
+  font-size:.82rem;
+  color:rgba(255,255,255,.75);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.nav-links a{
+  padding:12px 16px;
+  border-radius:999px;
+  font-size:.95rem;
+  color:#fff;
+  text-decoration:none;
+  transition:.2s ease;
+}
+
+.nav-links a:hover{
+  background:rgba(255,255,255,.08);
+}
+
+.nav-links a.active-link{
+  background:linear-gradient(135deg, #4b8c57, #98a86b);
+  font-weight:700;
+}
+
+.nav-toggle{
+  display:none;
+  width:42px;
+  height:42px;
+  min-width:42px;
+  min-height:42px;
+  max-width:42px;
+  max-height:42px;
+
+  border:none;
+  border-radius:12px;
+  background:rgba(255,255,255,.08);
+  cursor:pointer;
+
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:4px;
+
+  padding:0; /* IMPORTANT */
+  flex-shrink:0; /* prevents stretching */
+}
+.nav{
+  height:72px; /* locks navbar height */
+  align-items:center;
+}
+.brand{
+  height:100%;
+  display:flex;
+  align-items:center;
+}
+.nav-toggle span{
+  width:20px;
+  height:2px;
+}
+.nav-toggle span{
+  display:block;
+  width:22px;
+  height:2px;
+  background:#fff;
+  border-radius:999px;
+  transition:.25s ease;
+}
+
+/* mobile */
+@media (max-width: 900px){
+  .nav{
+    padding:14px 16px;
+  }
+
+  .nav-toggle{
+    display:flex;
+  }
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:16px;
+    right:16px;
+    margin-top:12px;
+    padding:14px;
+    border-radius:20px;
+    background:rgba(10,16,22,.98);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 18px 40px rgba(0,0,0,.35);
+    flex-direction:column;
+    align-items:stretch;
+    gap:8px;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
+  .nav-links a{
+    width:100%;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+
+  .brand-mark{
+    width:50px;
+    height:50px;
+  }
+
+  .brand-name{
+    font-size:1rem;
+  }
+
+  .brand-sub{
+    font-size:.75rem;
+  }
+}
   </style>
 </head>
 <body>
 
-  <header class="nav-wrap">
-    <nav class="nav">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">CH</span>
-        <span class="brand-text">
-          <span class="brand-name">Chillz Hemp</span>
-          <span class="brand-sub">Lab Reports</span>
-        </span>
-      </a>
+<header class="nav-wrap">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">TY</span>
+      <span class="brand-text">
+        <span class="brand-name">Tyson Hemp</span>
+        <span class="brand-sub">Lab Reports</span>
+      </span>
+    </a>
 
-      <div class="nav-links">
-        <a href="index.html#flower">Flower</a>
-        <a href="index.html#gummies">Gummies</a>
-        <a href="index.html#vapes">Vapes</a>
-        <a href="index.html#prerolls">Pre-Rolls</a>
-        <a href="coas.html" class="active-link">COAs</a>
-        <a href="disclaimer.html">Disclaimer</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
-  </header>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-links" id="navMenu">
+      <a href="coas.html" class="active-link">COAs</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
 
   <main class="page">
     <section class="shell">
@@ -331,15 +516,15 @@
           <div class="report-grid">
             <div class="report-card">
               <img src="" alt="PreRoll Hybrid 1">
-              <div class="report-info"><h3>Hybrid Report 01</h3><p>Add image URL in src.</p></div>
+              <div class="report-info"><h3>Hybrid Report 01</h3></div>
             </div>
             <div class="report-card">
               <img src="" alt="PreRoll Hybrid 2">
-              <div class="report-info"><h3>Hybrid Report 02</h3><p>Add image URL in src.</p></div>
+              <div class="report-info"><h3>Hybrid Report 02</h3></div>
             </div>
             <div class="report-card">
               <img src="" alt="PreRoll Hybrid 3">
-              <div class="report-info"><h3>Hybrid Report 03</h3><p>Add image URL in src.</p></div>
+              <div class="report-info"><h3>Hybrid Report 03</h3></div>
             </div>
           </div>
         </div>
@@ -347,18 +532,18 @@
         <div class="subtab-panel" data-parent-panel="prerolls" data-subpanel="indica">
           <div class="panel-head"><h2>PreRolls — Indica</h2></div>
           <div class="report-grid">
-            <div class="report-card"><img src="" alt="PreRoll Indica 1"><div class="report-info"><h3>Indica Report 01</h3><p>Add image URL in src.</p></div></div>
-            <div class="report-card"><img src="" alt="PreRoll Indica 2"><div class="report-info"><h3>Indica Report 02</h3><p>Add image URL in src.</p></div></div>
-            <div class="report-card"><img src="" alt="PreRoll Indica 3"><div class="report-info"><h3>Indica Report 03</h3><p>Add image URL in src.</p></div></div>
+            <div class="report-card"><img src="" alt="PreRoll Indica 1"><div class="report-info"><h3>Indica Report 01</h3></div></div>
+            <div class="report-card"><img src="" alt="PreRoll Indica 2"><div class="report-info"><h3>Indica Report 02</h3></div></div>
+            <div class="report-card"><img src="" alt="PreRoll Indica 3"><div class="report-info"><h3>Indica Report 03</h3></div></div>
           </div>
         </div>
 
         <div class="subtab-panel" data-parent-panel="prerolls" data-subpanel="sativa">
           <div class="panel-head"><h2>PreRolls — Sativa</h2></div>
           <div class="report-grid">
-            <div class="report-card"><img src="" alt="PreRoll Sativa 1"><div class="report-info"><h3>Sativa Report 01</h3><p>Add image URL in src.</p></div></div>
-            <div class="report-card"><img src="" alt="PreRoll Sativa 2"><div class="report-info"><h3>Sativa Report 02</h3><p>Add image URL in src.</p></div></div>
-            <div class="report-card"><img src="" alt="PreRoll Sativa 3"><div class="report-info"><h3>Sativa Report 03</h3><p>Add image URL in src.</p></div></div>
+            <div class="report-card"><img src="" alt="PreRoll Sativa 1"><div class="report-info"><h3>Sativa Report 01</h3></div></div>
+            <div class="report-card"><img src="" alt="PreRoll Sativa 2"><div class="report-info"><h3>Sativa Report 02</h3></div></div>
+            <div class="report-card"><img src="" alt="PreRoll Sativa 3"><div class="report-info"><h3>Sativa Report 03</h3></div></div>
           </div>
         </div>
       </div>
@@ -374,27 +559,27 @@
         <div class="subtab-panel active" data-parent-panel="gummies" data-subpanel="hybrid">
           <div class="panel-head"><h2>Gummies — Hybrid</h2></div>
           <div class="report-grid">
-            <div class="report-card"><img src="./assets/images/Gummis Lab Hybrid.jpeg" alt="Gummies Hybrid 1"><div class="report-info"><h3>Hybrid Report 01</h3><p>Add image URL in src.</p></div></div>
-            <!-- <div class="report-card"><img src="" alt="Gummies Hybrid 2"><div class="report-info"><h3>Hybrid Report 02</h3><p>Add image URL in src.</p></div></div>
-            <div class="report-card"><img src="" alt="Gummies Hybrid 3"><div class="report-info"><h3>Hybrid Report 03</h3><p>Add image URL in src.</p></div></div> -->
+            <div class="report-card"><img src="./assets/images/Gummis Lab Hybrid.jpeg" alt="Gummies Hybrid 1"><div class="report-info"><h3>Hybrid Report 01</h3></div></div>
+            <!-- <div class="report-card"><img src="" alt="Gummies Hybrid 2"><div class="report-info"><h3>Hybrid Report 02</h3></div></div>
+            <div class="report-card"><img src="" alt="Gummies Hybrid 3"><div class="report-info"><h3>Hybrid Report 03</h3></div></div> -->
           </div>
         </div>
 
         <div class="subtab-panel" data-parent-panel="gummies" data-subpanel="indica">
           <div class="panel-head"><h2>Gummies — Indica</h2></div>
           <div class="report-grid">
-            <div class="report-card"><img src="./assets/images/Gummies Lab Indica.jpeg" alt="Gummies Indica 1"><div class="report-info"><h3>Indica Report 01</h3><p>Add image URL in src.</p></div></div>
-            <!-- <div class="report-card"><img src="" alt="Gummies Indica 2"><div class="report-info"><h3>Indica Report 02</h3><p>Add image URL in src.</p></div></div>
-            <div class="report-card"><img src="" alt="Gummies Indica 3"><div class="report-info"><h3>Indica Report 03</h3><p>Add image URL in src.</p></div></div> -->
+            <div class="report-card"><img src="./assets/images/Gummies Lab Indica.jpeg" alt="Gummies Indica 1"><div class="report-info"><h3>Indica Report 01</h3></div></div>
+            <!-- <div class="report-card"><img src="" alt="Gummies Indica 2"><div class="report-info"><h3>Indica Report 02</h3></div></div>
+            <div class="report-card"><img src="" alt="Gummies Indica 3"><div class="report-info"><h3>Indica Report 03</h3></div></div> -->
           </div>
         </div>
 
         <div class="subtab-panel" data-parent-panel="gummies" data-subpanel="sativa">
           <div class="panel-head"><h2>Gummies — Sativa</h2></div>
           <div class="report-grid">
-            <div class="report-card"><img src="./assets/images/Gummies Lab Sativa.jpeg" alt="Gummies Sativa 1"><div class="report-info"><h3>Sativa Report 01</h3><p>Add image URL in src.</p></div></div>
-            <!-- <div class="report-card"><img src="" alt="Gummies Sativa 2"><div class="report-info"><h3>Sativa Report 02</h3><p>Add image URL in src.</p></div></div>
-            <div class="report-card"><img src="" alt="Gummies Sativa 3"><div class="report-info"><h3>Sativa Report 03</h3><p>Add image URL in src.</p></div></div> -->
+            <div class="report-card"><img src="./assets/images/Gummies Lab Sativa.jpeg" alt="Gummies Sativa 1"><div class="report-info"><h3>Sativa Report 01</h3></div></div>
+            <!-- <div class="report-card"><img src="" alt="Gummies Sativa 2"><div class="report-info"><h3>Sativa Report 02</h3></div></div>
+            <div class="report-card"><img src="" alt="Gummies Sativa 3"><div class="report-info"><h3>Sativa Report 03</h3></div></div> -->
           </div>
         </div>
       </div>
@@ -410,27 +595,27 @@
         <div class="subtab-panel active" data-parent-panel="flowers" data-subpanel="hybrid">
           <div class="panel-head"><h2>Flower — Hybrid</h2></div>
           <div class="report-grid">
-            <div class="report-card"><img src="./assets/images/Tyson Flower HybridLab.jpeg" alt="Flower Hybrid 1"><div class="report-info"><h3>Hybrid Report 01</h3><p>Add image URL in src.</p></div></div>
-            <!-- <div class="report-card"><img src="" alt="Flower Hybrid 2"><div class="report-info"><h3>Hybrid Report 02</h3><p>Add image URL in src.</p></div></div>
-            <div class="report-card"><img src="" alt="Flower Hybrid 3"><div class="report-info"><h3>Hybrid Report 03</h3><p>Add image URL in src.</p></div></div> -->
+            <div class="report-card"><img src="./assets/images/Tyson Flower HybridLab.jpeg" alt="Flower Hybrid 1"><div class="report-info"><h3>Hybrid Report 01</h3></div></div>
+            <!-- <div class="report-card"><img src="" alt="Flower Hybrid 2"><div class="report-info"><h3>Hybrid Report 02</h3></div></div>
+            <div class="report-card"><img src="" alt="Flower Hybrid 3"><div class="report-info"><h3>Hybrid Report 03</h3></div></div> -->
           </div>
         </div>
 
         <div class="subtab-panel" data-parent-panel="flowers" data-subpanel="indica">
           <div class="panel-head"><h2>Flower — Indica</h2></div>
           <div class="report-grid">
-            <div class="report-card"><img src="./assets/images/Tyson Flower Indica Lab.jpeg" alt="Flower Indica 1"><div class="report-info"><h3>Indica Report 01</h3><p>Add image URL in src.</p></div></div>
-            <!-- <div class="report-card"><img src="" alt="Flower Indica 2"><div class="report-info"><h3>Indica Report 02</h3><p>Add image URL in src.</p></div></div>
-            <div class="report-card"><img src="" alt="Flower Indica 3"><div class="report-info"><h3>Indica Report 03</h3><p>Add image URL in src.</p></div></div> -->
+            <div class="report-card"><img src="./assets/images/Tyson Flower Indica Lab.jpeg" alt="Flower Indica 1"><div class="report-info"><h3>Indica Report 01</h3></div></div>
+            <!-- <div class="report-card"><img src="" alt="Flower Indica 2"><div class="report-info"><h3>Indica Report 02</h3></div></div>
+            <div class="report-card"><img src="" alt="Flower Indica 3"><div class="report-info"><h3>Indica Report 03</h3></div></div> -->
           </div>
         </div>
 
         <div class="subtab-panel" data-parent-panel="flowers" data-subpanel="sativa">
           <div class="panel-head"><h2>Flower — Sativa</h2></div>
           <div class="report-grid">
-            <div class="report-card"><img src="./assets/images/Tyson Flower Sativa Lab.jpeg" alt="Flower Sativa 1"><div class="report-info"><h3>Sativa Report 01</h3><p>Add image URL in src.</p></div></div>
-            <!-- <div class="report-card"><img src="" alt="Flower Sativa 2"><div class="report-info"><h3>Sativa Report 02</h3><p>Add image URL in src.</p></div></div>
-            <div class="report-card"><img src="" alt="Flower Sativa 3"><div class="report-info"><h3>Sativa Report 03</h3><p>Add image URL in src.</p></div></div> -->
+            <div class="report-card"><img src="./assets/images/Tyson Flower Sativa Lab.jpeg" alt="Flower Sativa 1"><div class="report-info"><h3>Sativa Report 01</h3></div></div>
+            <!-- <div class="report-card"><img src="" alt="Flower Sativa 2"><div class="report-info"><h3>Sativa Report 02</h3></div></div>
+            <div class="report-card"><img src="" alt="Flower Sativa 3"><div class="report-info"><h3>Sativa Report 03</h3></div></div> -->
           </div>
         </div>
       </div>
@@ -446,27 +631,27 @@
         <div class="subtab-panel active" data-parent-panel="donuts" data-subpanel="hybrid">
           <div class="panel-head"><h2>Hashole — Hybrid</h2></div>
           <div class="report-grid">
-            <div class="report-card"><img src="./assets/images/Tyson Hash Hole Lab.jpeg" alt="Donuts Hybrid 1"><div class="report-info"><h3>Hybrid Report 01</h3><p>Add image URL in src.</p></div></div>
-            <!-- <div class="report-card"><img src="" alt="Donuts Hybrid 2"><div class="report-info"><h3>Hybrid Report 02</h3><p>Add image URL in src.</p></div></div>
-            <div class="report-card"><img src="" alt="Donuts Hybrid 3"><div class="report-info"><h3>Hybrid Report 03</h3><p>Add image URL in src.</p></div></div> -->
+            <div class="report-card"><img src="./assets/images/Tyson Hash Hole Lab.jpeg" alt="Donuts Hybrid 1"><div class="report-info"><h3>Hybrid Report 01</h3></div></div>
+            <!-- <div class="report-card"><img src="" alt="Donuts Hybrid 2"><div class="report-info"><h3>Hybrid Report 02</h3></div></div>
+            <div class="report-card"><img src="" alt="Donuts Hybrid 3"><div class="report-info"><h3>Hybrid Report 03</h3></div></div> -->
           </div>
         </div>
 
         <!-- <div class="subtab-panel" data-parent-panel="donuts" data-subpanel="indica">
           <div class="panel-head"><h2>Donuts — Indica</h2></div>
           <div class="report-grid">
-            <div class="report-card"><img src="" alt="Donuts Indica 1"><div class="report-info"><h3>Indica Report 01</h3><p>Add image URL in src.</p></div></div>
-            <div class="report-card"><img src="" alt="Donuts Indica 2"><div class="report-info"><h3>Indica Report 02</h3><p>Add image URL in src.</p></div></div>
-            <div class="report-card"><img src="" alt="Donuts Indica 3"><div class="report-info"><h3>Indica Report 03</h3><p>Add image URL in src.</p></div></div>
+            <div class="report-card"><img src="" alt="Donuts Indica 1"><div class="report-info"><h3>Indica Report 01</h3></div></div>
+            <div class="report-card"><img src="" alt="Donuts Indica 2"><div class="report-info"><h3>Indica Report 02</h3></div></div>
+            <div class="report-card"><img src="" alt="Donuts Indica 3"><div class="report-info"><h3>Indica Report 03</h3></div></div>
           </div>
         </div>
 
         <div class="subtab-panel" data-parent-panel="donuts" data-subpanel="sativa">
           <div class="panel-head"><h2>Donuts — Sativa</h2></div>
           <div class="report-grid">
-            <div class="report-card"><img src="" alt="Donuts Sativa 1"><div class="report-info"><h3>Sativa Report 01</h3><p>Add image URL in src.</p></div></div>
-            <div class="report-card"><img src="" alt="Donuts Sativa 2"><div class="report-info"><h3>Sativa Report 02</h3><p>Add image URL in src.</p></div></div>
-            <div class="report-card"><img src="" alt="Donuts Sativa 3"><div class="report-info"><h3>Sativa Report 03</h3><p>Add image URL in src.</p></div></div>
+            <div class="report-card"><img src="" alt="Donuts Sativa 1"><div class="report-info"><h3>Sativa Report 01</h3></div></div>
+            <div class="report-card"><img src="" alt="Donuts Sativa 2"><div class="report-info"><h3>Sativa Report 02</h3></div></div>
+            <div class="report-card"><img src="" alt="Donuts Sativa 3"><div class="report-info"><h3>Sativa Report 03</h3></div></div>
           </div>
         </div> -->
       </div>
@@ -508,6 +693,13 @@
       });
     });
   </script>
+<script>
+  const navToggle = document.getElementById("navToggle");
+  const navMenu = document.getElementById("navMenu");
 
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+</script>
 </body>
 </html>
